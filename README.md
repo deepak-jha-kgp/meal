@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://lemma.work/import/github/deepak-jha-kgp/meal"><img alt="Install and Remix on Lemma" src="./docs/install-remix-on-lemma.svg" height="34"></a>
+  <a href="https://lemma.work/import/github/deepak-jha-kgp/meal"><img alt="Install and Remix on Lemma" src="./docs/install-remix-on-lemma.svg" height="38"></a>
 </p>
 
 <p align="center">A food journal that accepts ordinary meal descriptions and turns them into a useful daily picture.</p>
@@ -42,7 +42,7 @@ The files in this repo contain the structure and instructions. Your private reco
 ## Install and remix on Lemma
 
 <p>
-  <a href="https://lemma.work/import/github/deepak-jha-kgp/meal"><img alt="Install and Remix on Lemma" src="./docs/install-remix-on-lemma.svg" height="34"></a>
+  <a href="https://lemma.work/import/github/deepak-jha-kgp/meal"><img alt="Install and Remix on Lemma" src="./docs/install-remix-on-lemma.svg" height="38"></a>
 </p>
 
 The button opens Lemma's import flow for this exact GitHub repository:
