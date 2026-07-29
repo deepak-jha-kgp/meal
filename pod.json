@@ -1,5 +1,5 @@
 {
   "name": "meal-tracker",
   "description": "Meal: a Telegram-native food journal with durable nutrition totals, datastore-triggered review, gentle signals, and a live single-page app.",
-  "format_version": 1
+  "format_version": 3
 }
