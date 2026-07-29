@@ -3,90 +3,57 @@
 </p>
 
 <p align="center">
-  <a href="https://lemma.work"><img alt="Built with Lemma" src="https://img.shields.io/badge/built%20with-Lemma-111318?style=flat-square"></a>
-  <img alt="Human in the loop" src="https://img.shields.io/badge/agents-in%20the%20loop-ef6c35?style=flat-square">
-  <img alt="Durable state" src="https://img.shields.io/badge/state-durable-111318?style=flat-square">
+  <a href="https://lemma.work/import/github/deepak-jha-kgp/meal"><img alt="Run on Lemma" src="https://img.shields.io/badge/Run_on_Lemma-111111?style=for-the-badge"></a>
+  <a href="https://github.com/deepak-jha-kgp/meal/fork"><img alt="Fork and make it yours" src="https://img.shields.io/badge/Fork_and_make_it_yours-F4F1EA?style=for-the-badge&amp;logo=github&amp;logoColor=111111"></a>
 </p>
 
-<p align="center">
-  <strong>Tell Telegram what you ate. Get a calm, durable picture of your nutrition.</strong><br/>
-  <sub>A food journal that turns messy meal language into daily totals, confidence signals, and one useful next move.</sub>
+<p align="center">A food journal that accepts ordinary meal descriptions and turns them into a useful daily picture.</p>
+
+## Why it exists
+
+Most food trackers ask for the exact ingredient, brand, weight, and serving size before they will save anything. Real meals are remembered as “two rotis and some dal” or “the usual sandwich.”
+
+Meal accepts that ordinary language. It records what it knows, shows where it is unsure, and gives you a calm view of the day rather than pretending every estimate is exact.
+
+## What it does
+
+- Log a meal by describing it in Telegram as you normally would.
+- Keep the original words alongside the interpreted foods and portions.
+- Show confidence signals when the description leaves room for doubt.
+- Update the day's nutrition totals after each meal.
+- Offer one useful next move instead of a stream of warnings.
+
+## What a normal use looks like
+
+You message “paneer wrap and coffee” after lunch. Meal records the phrase, makes a reasonable estimate, and marks the uncertain parts. The daily view updates, and you can correct the meal later if the estimate was off.
+
+## How it is built on Lemma
+
+This repository contains the pod itself, not just a screenshot or a prompt. The interface and the parts that do the work are installed together.
+
+- `surfaces/telegram/` — The low-friction place to log a meal.
+- `tables/` — Meals, foods, interpreted signals, daily totals, and review triggers.
+- `agents/meal-logger-agent/` — The instructions for reading an ordinary meal description without inventing certainty.
+- `functions/` — Record a meal and review it through checked writes.
+- `schedules/` — Start the review when a meal is added.
+- `apps/meal-tracker-app/` — The daily view for totals, confidence, and corrections.
+
+The files in this repo contain the structure and instructions. Your private records, connected accounts, credentials, and deployed URLs are added after import.
+
+## Run it on Lemma
+
+<p>
+  <a href="https://lemma.work/import/github/deepak-jha-kgp/meal"><img alt="Run on Lemma" src="https://img.shields.io/badge/Run_on_Lemma-111111?style=for-the-badge"></a>
 </p>
 
+The button opens Lemma's import flow for this exact GitHub repository:
 
+`https://lemma.work/import/github/deepak-jha-kgp/meal`
 
-## The product loop
+Connect your Telegram bot, describe one real meal, and check the interpretation in the app. No health history, meal data, or bot token is included.
 
-<table>
-  <tr>
-    <td align="center" width="25%">
-      <strong>01</strong><br/>
-      Describe a meal
-    </td>
-    <td align="center" width="25%">
-      <strong>02</strong><br/>
-      Write meal + daily rollup
-    </td>
-    <td align="center" width="25%">
-      <strong>03</strong><br/>
-      Review in background
-    </td>
-    <td align="center" width="25%">
-      <strong>04</strong><br/>
-      Show one useful signal
-    </td>
-  </tr>
-</table>
-
-```mermaid
-flowchart LR
-  A["Telegram / quick add"] --> B["Canonical meal record"]
-  B --> C["Daily nutrition rollup"]
-  B --> D["Background review"]
-  D --> E["Confidence + signal + next move"]
-```
-
-## Why this is a Lemma pod
-
-<table>
-<tr>
-    <td width="50%" valign="top">
-      <h3>Natural capture</h3>
-      <p>Log a meal in ordinary language from Telegram or the compact web application.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Durable totals</h3>
-      <p>A canonical write updates the meal journal and chart-ready daily nutrition rollup.</p>
-    </td>
-  </tr>
-<tr>
-    <td width="50%" valign="top">
-      <h3>Gentle review</h3>
-      <p>A specialist materializes confidence, attention signals, and one useful next move.</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Replay safe</h3>
-      <p>Dedupe keys keep repeated delivery from creating duplicate meals.</p>
-    </td>
-  </tr>
-</table>
-
-This repository is a complete Lemma pod bundle: state, agent instructions, deterministic functions, workflows or schedules, permissions, application metadata, and the interface people actually use. The useful unit is the running system—not an isolated prompt or demo page.
-
-## What is inside
-
-| Layer | Role |
-| --- | --- |
-| **App** | The calm, purpose-built surface people operate |
-| **Agents** | Judgment, research, drafting, or review with explicit instructions |
-| **Tables** | Durable state that survives every conversation and run |
-| **Functions** | Deterministic writes and guarded side effects |
-| **Workflows / schedules** | The continuing loop that notices and acts |
-| **Files** | Native knowledge and artifacts when the pod needs them |
-
-## Run it
-
-### Import the pod
+<details>
+<summary>Import from the command line</summary>
 
 ```bash
 git clone https://github.com/deepak-jha-kgp/meal.git
@@ -96,48 +63,30 @@ lemma pods import . --dry-run
 lemma pods import .
 ```
 
-Connector accounts, credentials, member IDs, live records, and uploaded file bytes are intentionally not stored in this repository. Configure those in your own Lemma environment after import.
+</details>
 
-## Repository map
+## Make it yours
 
-```text
-.
-├── pod.json                 # pod identity
-├── tables/                  # durable state
-├── functions/               # deterministic operations
-├── agents/                  # specialist instructions + permissions
-├── workflows/               # multi-step processes, when used
-├── schedules/               # time/event triggers, when used
-├── apps/                    # deployed application bundle
-├── docs/                    # visuals + implementation notes
-└── README.md
-```
+You do not need to keep this pod exactly as it is.
 
-Not every pod needs every resource type. The bundle only includes the machinery required by this product loop.
+1. [Fork the repository](https://github.com/deepak-jha-kgp/meal/fork).
+2. Change the instructions, app, tables, or rules for the way you work.
+3. Import your fork with `https://lemma.work/import/github/<your-github-name>/<your-repo>`.
+4. When it is useful, [show your version here](https://github.com/deepak-jha-kgp/meal/issues/new?template=show-your-version.yml&title=%5BRemix%5D+) with one screenshot and a short note about what changed.
 
-## Trust boundary
+If this pod saved you from rebuilding the same thing, star the repo so the useful versions are easier to find.
 
-- Agent work lands in durable, inspectable state.
-- Sensitive outside actions remain guarded by application or approval logic.
-- Credentials and connected accounts never belong in the repository.
-- Human decisions are part of the system, not an exception path.
-
-## Go deeper
+## Repository guide
 
 - [Implementation notes](./docs/implementation-notes.md)
 - [Social preview](./docs/social-preview.jpg)
-- [Build on Lemma](https://lemma.work)
+- [Contributing](./CONTRIBUTING.md)
+- [Security](./SECURITY.md)
 
 ## Share
 
 <p>
-  <a href="https://twitter.com/intent/tweet?text=Meal%20%E2%80%94%20Tell%20Telegram%20what%20you%20ate.%20Get%20a%20calm%2C%20durable%20picture%20of%20your%20nutrition.&url=https%3A%2F%2Fgithub.com%2Fdeepak-jha-kgp%2Fmeal"><img alt="Share on X" src="https://img.shields.io/badge/Share_on_X-111318?style=for-the-badge&logo=x"></a>
-  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2Fdeepak-jha-kgp%2Fmeal"><img alt="Share on LinkedIn" src="https://img.shields.io/badge/Share_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin"></a>
-  <a href="https://bsky.app/intent/compose?text=Meal%20%E2%80%94%20Tell%20Telegram%20what%20you%20ate.%20Get%20a%20calm%2C%20durable%20picture%20of%20your%20nutrition.%20https%3A%2F%2Fgithub.com%2Fdeepak-jha-kgp%2Fmeal"><img alt="Share on Bluesky" src="https://img.shields.io/badge/Share_on_Bluesky-1185FE?style=for-the-badge&logo=bluesky&logoColor=white"></a>
-</p>
-
----
-
-<p align="center">
-  <sub>People use the app. Agents work through the system. The result stays.</sub>
+  <a href="https://twitter.com/intent/tweet?text=Meal%3A%20A%20food%20journal%20that%20accepts%20ordinary%20meal%20descriptions%20and%20turns%20them%20into%20a%20useful%20daily%20picture.&amp;url=https%3A%2F%2Fgithub.com%2Fdeepak-jha-kgp%2Fmeal"><img alt="Share on X" src="https://img.shields.io/badge/Share_on_X-111111?style=for-the-badge&amp;logo=x"></a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2Fdeepak-jha-kgp%2Fmeal"><img alt="Share on LinkedIn" src="https://img.shields.io/badge/Share_on_LinkedIn-0A66C2?style=for-the-badge&amp;logo=linkedin"></a>
+  <a href="https://bsky.app/intent/compose?text=Meal%3A%20A%20food%20journal%20that%20accepts%20ordinary%20meal%20descriptions%20and%20turns%20them%20into%20a%20useful%20daily%20picture.%20https%3A%2F%2Fgithub.com%2Fdeepak-jha-kgp%2Fmeal"><img alt="Share on Bluesky" src="https://img.shields.io/badge/Share_on_Bluesky-1185FE?style=for-the-badge&amp;logo=bluesky&amp;logoColor=white"></a>
 </p>
