@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/social-preview.svg" alt="Meal — Tell Telegram what you ate. Get a calm, durable picture of your nutrition." width="100%"/>
+  <img src="./docs/social-preview.jpg" alt="Meal — say what you ate, see the pattern, choose one next move." width="100%"/>
 </p>
 
 <p align="center">
@@ -125,7 +125,7 @@ Not every pod needs every resource type. The bundle only includes the machinery 
 ## Go deeper
 
 - [Implementation notes](./docs/implementation-notes.md)
-- [Social card source](./docs/social-preview.svg)
+- [Social preview](./docs/social-preview.jpg)
 - [Build on Lemma](https://lemma.work)
 
 ## Share
