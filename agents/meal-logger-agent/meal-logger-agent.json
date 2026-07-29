@@ -1,0 +1,24 @@
+{
+  "name": "meal-logger-agent",
+  "description": "Telegram meal logger and background nutrition reviewer for durable meals, daily totals, and gentle next-move signals.",
+  "instruction": { "$file": "instruction.md" },
+  "toolsets": ["POD", "WEB_SEARCH"],
+  "is_user_facing": true,
+  "is_background": true,
+  "permissions": { "grants": [
+    { "resource_type": "function", "resource_name": "log_meal",
+      "permission_ids": ["function.read", "function.execute"] },
+    { "resource_type": "function", "resource_name": "review_meal",
+      "permission_ids": ["function.read", "function.execute"] },
+    { "resource_type": "datastore_table", "resource_name": "meals",
+      "permission_ids": ["datastore.table.read", "datastore.record.read", "datastore.record.write"] },
+    { "resource_type": "datastore_table", "resource_name": "foods",
+      "permission_ids": ["datastore.table.read", "datastore.record.read", "datastore.record.write"] },
+    { "resource_type": "datastore_table", "resource_name": "daily_nutrition",
+      "permission_ids": ["datastore.table.read", "datastore.record.read", "datastore.record.write"] },
+    { "resource_type": "datastore_table", "resource_name": "meal_signals",
+      "permission_ids": ["datastore.table.read", "datastore.record.read", "datastore.record.write"] },
+    { "resource_type": "datastore_table", "resource_name": "meal_triggers",
+      "permission_ids": ["datastore.table.read", "datastore.record.read", "datastore.record.write"] }
+  ]}
+}

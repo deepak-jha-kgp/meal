@@ -1,0 +1,14 @@
+{
+  "name": "Paneer grain bowl",
+  "meal_type": "lunch",
+  "calories": 620,
+  "protein_g": 31,
+  "carbs_g": 68,
+  "fat_g": 24,
+  "quantity": 1,
+  "unit": "bowl",
+  "source": "manual",
+  "notes": "Paneer, brown rice, greens, and mint dressing",
+  "timezone_name": "Asia/Kolkata",
+  "dedupe_key": "smoke-paneer-grain-bowl"
+}

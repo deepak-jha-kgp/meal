@@ -1,0 +1,11 @@
+{
+  "name": "telegram",
+  "platform": "TELEGRAM",
+  "default_agent_name": "meal-logger-agent",
+  "credential_mode": "CUSTOM",
+  "is_enabled": true,
+  "config": {
+    "dm_conversation_reset_after_hours": 24,
+    "context_message_limit": 20
+  }
+}

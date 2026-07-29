@@ -1,0 +1,19 @@
+{
+  "name": "foods",
+  "primary_key_column": "id",
+  "enable_rls": false,
+  "columns": [
+    { "name": "name", "type": "TEXT", "required": true, "unique": true, "max_length": 160,
+      "description": "Food name, lowercase canonical, e.g. 'grilled chicken breast'" },
+    { "name": "serving_unit", "type": "TEXT", "max_length": 40,
+      "description": "Default serving unit, e.g. '100 g', '1 serving', '1 piece'" },
+    { "name": "calories_per_serving", "type": "FLOAT",
+      "description": "kcal per the default serving described by serving_unit" },
+    { "name": "protein_g", "type": "FLOAT", "description": "Protein grams per serving" },
+    { "name": "carbs_g", "type": "FLOAT", "description": "Carb grams per serving" },
+    { "name": "fat_g", "type": "FLOAT", "description": "Fat grams per serving" },
+    { "name": "tags", "type": "TEXT", "max_length": 240,
+      "description": "Comma-separated tags, e.g. 'protein,poultry,low-carb'" }
+  ],
+  "config": {}
+}

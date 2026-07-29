@@ -1,0 +1,18 @@
+{
+  "name": "meal_triggers",
+  "primary_key_column": "id",
+  "enable_rls": true,
+  "visibility": "POD",
+  "columns": [
+    {
+      "name": "meal_id",
+      "type": "UUID",
+      "required": true,
+      "foreign_key": { "references": "meals.id" }
+    },
+    { "name": "trigger_type", "type": "ENUM", "required": true, "default": "meal_logged", "options": ["meal_logged"] },
+    { "name": "status", "type": "ENUM", "required": true, "default": "queued", "options": ["queued", "processed", "ignored"] },
+    { "name": "source_event", "type": "JSON" }
+  ],
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "name": "daily_nutrition",
+  "primary_key_column": "id",
+  "enable_rls": true,
+  "columns": [
+    { "name": "log_date", "type": "DATE", "required": true, "unique": true },
+    { "name": "meal_count", "type": "INTEGER", "required": true, "default": 0 },
+    { "name": "reviewed_count", "type": "INTEGER", "required": true, "default": 0 },
+    { "name": "calories", "type": "FLOAT", "required": true, "default": 0 },
+    { "name": "protein_g", "type": "FLOAT", "required": true, "default": 0 },
+    { "name": "carbs_g", "type": "FLOAT", "required": true, "default": 0 },
+    { "name": "fat_g", "type": "FLOAT", "required": true, "default": 0 },
+    { "name": "calorie_target", "type": "FLOAT", "required": true, "default": 2000 },
+    { "name": "protein_target_g", "type": "FLOAT", "required": true, "default": 100 },
+    { "name": "calorie_progress_percent", "type": "FLOAT", "required": true, "default": 0 },
+    { "name": "protein_progress_percent", "type": "FLOAT", "required": true, "default": 0 },
+    { "name": "attention_count", "type": "INTEGER", "required": true, "default": 0 },
+    { "name": "summary", "type": "TEXT", "max_length": 1000 }
+  ],
+  "config": {}
+}

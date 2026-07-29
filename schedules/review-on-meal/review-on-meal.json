@@ -1,0 +1,10 @@
+{
+  "name": "review-on-meal",
+  "schedule_type": "DATASTORE",
+  "config": {
+    "datastore": "meal_triggers",
+    "operations": ["INSERT"]
+  },
+  "agent_name": "meal-logger-agent",
+  "is_active": true
+}

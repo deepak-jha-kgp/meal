@@ -1,0 +1,14 @@
+{
+  "meal_id": "REPLACE_WITH_MEAL_ID",
+  "trigger_id": "REPLACE_WITH_TRIGGER_ID",
+  "meal_score": 4,
+  "protein_signal": "steady",
+  "plant_signal": "strong",
+  "needs_attention": false,
+  "review_note": "A balanced bowl with a solid protein anchor and meaningful plant variety.",
+  "next_move": "Keep the next meal simple and include water or fruit if you want it.",
+  "signal_type": null,
+  "signal_title": null,
+  "signal_body": null,
+  "signal_severity": "info"
+}
